@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 
 const Experience: React.FC = () => {
     return (

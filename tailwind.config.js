@@ -8,6 +8,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
+                mono: ['JetBrains Mono', 'monospace'],
             },
             colors: {
                 // We can add custom colors here if needed to match the starry theme perfectly,

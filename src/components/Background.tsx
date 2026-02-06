@@ -6,67 +6,104 @@ const StarryBackground: React.FC = () => {
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
+
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
         let animationFrameId: number;
-        let stars: Array<{ x: number; y: number; radius: number; alpha: number; speed: number }> = [];
+        let stars: { x: number; y: number; size: number; opacity: number; speed: number }[] = [];
 
-        const resizeCanvas = () => {
+        // Mouse position state
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetX = 0;
+        let targetY = 0;
+
+        const handleResize = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             initStars();
         };
 
+        const handleMouseMove = (e: MouseEvent) => {
+            mouseX = (e.clientX - window.innerWidth / 2) * 0.05; // Sensitivity factor
+            mouseY = (e.clientY - window.innerHeight / 2) * 0.05;
+        };
+
         const initStars = () => {
             stars = [];
-            const numStars = Math.floor((canvas.width * canvas.height) / 3000); // Adjusted density
+            const numStars = Math.floor((canvas.width * canvas.height) / 3000); // adjust density
+
             for (let i = 0; i < numStars; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    radius: Math.random() * 1.5,
-                    alpha: Math.random(),
-                    speed: Math.random() * 0.05,
+                    size: Math.random() * 1.5,
+                    opacity: Math.random() * 0.5 + 0.1,
+                    speed: Math.random() * 0.2 + 0.05
                 });
             }
         };
 
-        const draw = () => {
+        const animate = () => {
+            // Smooth interpolation for parallax
+            targetX += (mouseX - targetX) * 0.05;
+            targetY += (mouseY - targetY) * 0.05;
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            // We rely on CSS for the black background to avoid clearing issues or just fill here
-            // But clearing is better for transparency if we wanted, but we want black.
-            ctx.fillStyle = '#000000';
+
+            // Draw background
+            const gradient = ctx.createRadialGradient(
+                canvas.width / 2,
+                canvas.height / 2,
+                0,
+                canvas.width / 2,
+                canvas.height / 2,
+                canvas.width // Added missing radius argument
+            );
+            gradient.addColorStop(0, '#09090b'); // Darkest void
+            gradient.addColorStop(1, '#000000');
+
+            ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            stars.forEach((star) => {
+            stars.forEach(star => {
+                // Parallax offset
+                const offsetX = targetX * star.speed * 2;
+                const offsetY = targetY * star.speed * 2;
+
                 ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+                ctx.arc(star.x + offsetX, star.y + offsetY, star.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
                 ctx.fill();
 
-                // Twinkle effect
-                if (Math.random() > 0.95) {
-                    star.alpha += (Math.random() - 0.5) * 0.1;
-                    if (star.alpha < 0.1) star.alpha = 0.1;
-                    if (star.alpha > 1) star.alpha = 1;
+                // Subtle twinkling
+                if (Math.random() > 0.99) {
+                    star.opacity = Math.random() * 0.5 + 0.1;
                 }
             });
 
-            animationFrameId = requestAnimationFrame(draw);
+            animationFrameId = requestAnimationFrame(animate);
         };
 
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-        draw();
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('mousemove', handleMouseMove);
+        animate();
 
         return () => {
-            window.removeEventListener('resize', resizeCanvas);
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('mousemove', handleMouseMove);
             cancelAnimationFrame(animationFrameId);
         };
     }, []);
 
-    return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none" />;
+    return (
+        <canvas
+            ref={canvasRef}
+            className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
+        />
+    );
 };
 
 export default StarryBackground;
