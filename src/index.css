@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-[#09090b] text-[#fafafa];
+    font-family: 'Inter', sans-serif;
+  }
+}
