@@ -3,32 +3,32 @@ import ProjectCard from './ProjectCard';
 
 const projects = [
     {
-        title: "Heart Disease Prediction",
-        problem: "Clinical risk assessment is slow with incomplete patient data.",
-        metric: "ROC-AUC 0.91",
-        tech: ["Streamlit", "Power BI", "Python"],
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070",
+        title: "Real-Time Fraud Detection",
+        problem: "Financial losses due to undetected fraudulent transactions in high-velocity streams.",
+        metric: "99.8% Recall < 200ms",
+        tech: ["Python", "Scikit-learn", "Kafka", "Redis"],
+        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1470", // Security/Data lock image
     },
     {
-        title: "Spotify Analytics Pipeline",
-        problem: "Processing high-volume audio stream metadata in real-time.",
-        metric: "< 500ms Latency",
-        tech: ["Kafka", "Airflow", "Snowflake", "DBT"],
-        image: "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?auto=format&fit=crop&q=80&w=2074",
+        title: "Arabic Music Recognition",
+        problem: "Classifying complex regional Arabic musical scales (Maqam) from raw audio data.",
+        metric: "94% Accuracy (CNN)",
+        tech: ["Deep Learning", "Librosa", "TensorFlow", "CNN"],
+        image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=1470", // Audio/Music image
     },
     {
-        title: "Vendor IQ",
-        problem: "Identifying pricing gaps across 500K+ disorganized vendor transactions.",
-        metric: "$12k/mo Saved",
-        tech: ["SQL", "Pandas", "Power BI", "Python"],
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015",
+        title: "Insta-Scraper",
+        problem: "Manual data collection from social media is inefficient and prone to rate limits.",
+        metric: "50k+ Records/Hr",
+        tech: ["Python", "Selenium", "Docker", "Proxy Rotation"],
+        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1974", // Abstract network/social image
     },
     {
-        title: "Jobsy",
-        problem: "Internship search is manually intensive and prone to stale listings.",
-        metric: "98% Success Rate",
-        tech: ["Python", "BS4", "Automation"],
-        image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=2072",
+        title: "LinkedIn Automator",
+        problem: "Repetitive manual job applications waste valuable engineering time.",
+        metric: "500+ Apps/Week",
+        tech: ["Python", "Selenium", "ChromeDP", "Automation"],
+        image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=2072", // Automation/Laptop image
     },
 ];
 
