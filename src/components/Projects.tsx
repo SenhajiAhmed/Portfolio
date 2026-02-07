@@ -7,28 +7,28 @@ const projects = [
         problem: "Financial losses due to undetected fraudulent transactions in high-velocity streams.",
         metric: "99.8% Recall < 200ms",
         tech: ["Python", "Scikit-learn", "Kafka", "Redis"],
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1470", // Security/Data lock image
+        image: "/FraudDetection.png", // Local project image
     },
     {
         title: "Arabic Music Recognition",
         problem: "Classifying complex regional Arabic musical scales (Maqam) from raw audio data.",
         metric: "94% Accuracy (CNN)",
         tech: ["Deep Learning", "Librosa", "TensorFlow", "CNN"],
-        image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=1470", // Audio/Music image
+        image: "/ArabicMusicRecognition.png", // Local project image
     },
     {
         title: "Insta-Scraper",
         problem: "Manual data collection from social media is inefficient and prone to rate limits.",
         metric: "50k+ Records/Hr",
         tech: ["Python", "Selenium", "Docker", "Proxy Rotation"],
-        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1974", // Abstract network/social image
+        image: "/INSTASCRAPER.png", // Local project image
     },
     {
         title: "LinkedIn Automator",
         problem: "Repetitive manual job applications waste valuable engineering time.",
         metric: "500+ Apps/Week",
         tech: ["Python", "Selenium", "ChromeDP", "Automation"],
-        image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=2072", // Automation/Laptop image
+        image: "/linkedin.png", // Local project image
     },
 ];
 

@@ -4,6 +4,29 @@ import { Award } from 'lucide-react';
 const Experience: React.FC = () => {
     return (
         <section className="w-full mt-12 mb-12">
+            {/* Professional Experience Section */}
+            <h2 className="text-2xl font-bold text-[#fafafa] mb-12 flex items-center gap-3">
+                Professional Experience
+            </h2>
+
+            <div className="relative border-l border-white/10 ml-3 pl-12 py-2 space-y-12 mb-20">
+                {/* High Commission for Planning */}
+                <div className="relative group">
+                    <div className="absolute -left-[55px] top-1.5 w-3 h-3 rounded-sm bg-[#09090b] border border-white/30 group-hover:border-purple-400 group-hover:bg-purple-400/20 transition-colors duration-300" />
+
+                    <h3 className="text-lg font-bold text-[#fafafa] mb-1">Sentiment Analysis Intern</h3>
+                    <div className="flex items-center gap-2 text-sm text-[#a1a1aa] mb-4">
+                        <span className="text-purple-400 font-medium">High Commission for Planning</span>
+                        <span>•</span>
+                        <span>Rabat, Morocco</span>
+                    </div>
+
+                    <p className="text-[#d4d4d8] text-sm leading-relaxed">
+                        Built a pipeline to analyze public sentiment on the High Commission for Planning. Scraped news and comments, cleaned and translated multilingual data (French, Arabic, Moroccan dialect) to English using an API. Fine-tuned DistilBERT and RoBERTa, selected the best model, and applied sentiment analysis to classify comments as positive, neutral, or negative to estimate overall public opinion.
+                    </p>
+                </div>
+            </div>
+
             <h2 className="text-2xl font-bold text-[#fafafa] mb-12 flex items-center gap-3">
                 Education & Certifications
             </h2>

@@ -17,14 +17,14 @@ const Hero: React.FC = () => {
     return (
         <section className="w-full flex flex-col items-center gap-6 mb-8">
             {/* Profile Card */}
-            <div className="w-full max-w-3xl bg-[#09090b] border border-white/10 rounded-lg p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start relative overflow-hidden backdrop-blur-sm group hover:border-white/20 transition-colors duration-500">
+            <div className="w-full max-w-3xl bg-[#09090b] border border-white/10 rounded-lg p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 items-center relative overflow-hidden backdrop-blur-sm group hover:border-white/20 transition-colors duration-500">
 
                 {/* Profile Image */}
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-md overflow-hidden bg-gray-800 flex-shrink-0 border border-white/10 shadow-xl relative">
+                <div className="w-32 h-32 md:w-48 md:h-48 rounded-md overflow-hidden bg-gray-800 flex-shrink-0 border border-white/10 shadow-xl relative">
                     <img
                         src="/profile.png"
                         alt="Ahmed Senhaji"
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        className="w-full h-full object-cover transition-all duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
