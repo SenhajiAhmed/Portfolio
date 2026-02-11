@@ -83,6 +83,10 @@ const Experience: React.FC = () => {
                             <span className="text-[#d4d4d8] text-sm font-medium">Python for Deep Learning: Build Neural Networks</span>
                             <span className="text-[#a1a1aa] text-xs">Udemy / Coursera</span>
                         </div>
+                        <div className="flex flex-col gap-1">
+                            <span className="text-[#d4d4d8] text-sm font-medium">Portfolio and Risk Management</span>
+                            <span className="text-[#a1a1aa] text-xs">Coursera - Université de Genève</span>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -30,6 +30,20 @@ const projects = [
         tech: ["Python", "Selenium", "ChromeDP", "Automation"],
         image: "/linkedin.png", // Local project image
     },
+    {
+        title: "AI-Powered Legal Advisor",
+        problem: "Navigating complex Moroccan employment laws without expensive legal counsel.",
+        metric: "100% Citation Accuracy",
+        tech: ["Python", "RAG (FAISS)", "Llama 3", "LangChain"],
+        image: "/legal_advisor_project.png", // AI Generated
+    },
+    {
+        title: "Rambler Password Automator",
+        problem: "Managing security and password rotation for thousands of email accounts manually is impossible.",
+        metric: "1k+ Accounts/Hour",
+        tech: ["Python", "Selenium", "Proxy Rotation", "Threading"],
+        image: "/rambler_password_project.png", // AI Generated
+    },
 ];
 
 const Projects: React.FC = () => {
