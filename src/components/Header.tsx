@@ -78,7 +78,7 @@ const Header: React.FC = () => {
                 />
                 <div className="w-px h-3 bg-white/10" />
                 <NavLink
-                    href="#"
+                    href="/CV.pdf"
                     icon={FileText}
                     label="CV"
                     subLabel="Updated Jan 2026"
